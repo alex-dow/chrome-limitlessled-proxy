@@ -1,0 +1,29 @@
+{
+  "name": "Limitless LED Proxy",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "A chrome app that exposes a web server that can allow you to control LimitlessLED/Milight compatible lights",
+  "app": {
+    "background": {
+      "scripts": ["build/background.js"]
+    }
+  },
+  "permissions": [
+    "system.network",
+    "storage"
+  ],
+  "sockets": {
+    "tcpServer": {
+      "listen": ["*"]
+    },
+    "udp": {
+      "send": ["*:*"],
+      "bind": ["*:*"]
+    }
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "128": "assets/icon-128.png"
+  }
+}
+
